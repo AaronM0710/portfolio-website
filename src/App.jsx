@@ -13,7 +13,8 @@ const App = () => {
     bio: "Software Engineer with hands-on experience in full-stack web development and a strong foundation in data science principles. Proficient in HTML, CSS, JavaScript, and modern frameworks like React. Passionate about creating responsive, user-friendly interfaces and writing clean, efficient, and well-documented code.",
     email: "mccullougha00@yahoo.com",
     github: "https://github.com/AaronM0710",
-    linkedin: "https://www.linkedin.com/in/aaronjmccullough"
+    linkedin: "https://www.linkedin.com/in/aaronjmccullough",
+    availableForWork: true,
   };
 
   const projects = [
@@ -81,17 +82,27 @@ const App = () => {
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-100">{personalInfo.name}</h1>
               <h2 className="text-xl sm:text-2xl text-gray-400">{personalInfo.title}</h2>
+              {personalInfo.availableForWork && (
+                <span className="inline-flex items-center gap-1.5 mt-2 text-sm text-green-400">
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                  Available for work
+                </span>
+              )}
             </div>
           </div>
           <p className="text-base sm:text-lg text-gray-300 mb-6">{personalInfo.bio}</p>
           <div className="flex justify-center space-x-4">
-            <a href={personalInfo.github} className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
               <Github size={20} />
               <span>GitHub</span>
             </a>
-            <a href={personalInfo.linkedin} className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
               <Linkedin size={20} />
               <span>LinkedIn</span>
+            </a>
+            <a href={`mailto:${personalInfo.email}`} className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+              <Mail size={20} />
+              <span>Email</span>
             </a>
           </div>
         </div>

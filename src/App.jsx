@@ -217,10 +217,26 @@ const App = () => {
       {/* Certifications Section */}
       <section className="space-y-4">
         <h3 className="text-xl font-semibold text-gray-100 border-b border-gray-700 pb-2">Certifications</h3>
-        <ul className="list-disc ml-6 text-gray-400">
-          <li>Responsive Web Design</li>
-          <li>JavaScript Algorithms and Data Structures</li>
-        </ul>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="https://www.freecodecamp.org/certification/AaronM0710/responsive-web-design"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-full text-sm text-gray-300 transition-colors"
+          >
+            Responsive Web Design
+            <ExternalLink size={12} />
+          </a>
+          <a
+            href="https://www.freecodecamp.org/certification/AaronM0710/javascript-algorithms-and-data-structures"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-full text-sm text-gray-300 transition-colors"
+          >
+            JavaScript Algorithms and Data Structures
+            <ExternalLink size={12} />
+          </a>
+        </div>
       </section>
 
       {/* Work Experience Section */}

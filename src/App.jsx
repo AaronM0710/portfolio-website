@@ -250,7 +250,7 @@ const App = () => {
                     <span className="rounded-full border border-gray-600 px-3 py-1">
                       {personalInfo.workStyle}
                     </span>
-                    <span className="rounded-full border border-gray-600 px-3 py-1">
+                    <span className="relocation-badge rounded-full border border-amber-300/40 px-3 py-1 text-amber-100 shadow-lg shadow-amber-500/10">
                       New Grad May 2026
                     </span>
                     {personalInfo.availableForWork && (

@@ -60,7 +60,7 @@ const App = () => {
       description: "AI-powered personal finance tool with OCR receipt scanning via AWS Textract, GPT-4 driven spending insights, and PostgreSQL-backed transaction tracking. Features user authentication and document upload.",
       technologies: ["TypeScript", "React", "Node.js", "PostgreSQL", "AWS Textract", "OpenAI GPT-4"],
       github: "https://github.com/AaronM0710/ai-budgeting-app",
-      demo: null,
+      demo: "https://budgetboom.io/home",
     },
     {
       title: "Security Landing Page",

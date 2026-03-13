@@ -111,6 +111,30 @@ const App = () => {
     },
   ];
 
+  const testimonials = [
+    {
+      quote:
+        "Working with Aaron at ZYSC LLC has been awesome. As a Frontend Developer, he is full of curiosity and always asking the right questions, the kind that push the project forward.",
+      name: "Freddy Rojas",
+      title: "System Engineer | Software Developer | n8n Automation",
+      context: "Worked with Aaron on the same team at ZYSC LLC",
+    },
+    {
+      quote:
+        "Aaron has consistently impressed me with his charisma, helpfulness, and ability to bring people together. He does not just focus on his own success, he lifts others up and ensures that the entire team thrives.",
+      name: "Ivy R. Gentry",
+      title: "Administrative & Intake Specialist | Graduate Student",
+      context: "Studied with Aaron and has known him across academic and professional settings",
+    },
+    {
+      quote:
+        "He truly understands architecture, performance, debugging, and writes code that is clean and easy for the rest of the team to work with. Any team that hires Aaron is getting someone who ships high-quality work quickly and levels up constantly.",
+      name: "Allen Chen",
+      title: "Custodial Cast Member @ Walt Disney World",
+      context: "Studied data science with Aaron at the University of South Florida",
+    },
+  ];
+
   const projects = [
     {
       title: "ZYSC LLC — Web Application",
@@ -346,6 +370,43 @@ const App = () => {
     </div>
   );
 
+  const renderTestimonials = () => (
+    <div className="py-8">
+      <div className="space-y-8 rounded-2xl border border-gray-700 bg-gray-800 p-6 shadow-xl sm:p-8">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-100">Testimonials</h2>
+            <p className="mt-2 max-w-3xl text-gray-400">
+              Excerpts from LinkedIn recommendations from people who have worked with me and know how I show up as a teammate.
+            </p>
+          </div>
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-blue-300 hover:text-blue-200"
+          >
+            View LinkedIn
+            <ExternalLink size={14} />
+          </a>
+        </div>
+
+        <div className="grid gap-4">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.name} className="rounded-xl border border-gray-700 bg-gray-900/50 p-6">
+              <p className="text-lg leading-8 text-gray-200">"{testimonial.quote}"</p>
+              <div className="mt-5 space-y-1">
+                <p className="font-semibold text-gray-100">{testimonial.name}</p>
+                <p className="text-sm text-gray-400">{testimonial.title}</p>
+                <p className="text-sm text-gray-500">{testimonial.context}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
   const renderResume = () => (
     <div className="space-y-6 bg-gray-800 p-6 rounded-lg">
       {/* Header with Download Button */}
@@ -572,7 +633,7 @@ const App = () => {
       <nav className="bg-gray-800 border-b border-gray-700 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <ul className="flex space-x-8">
-            {['home', 'about me', 'portfolio', 'resume'].map((section) => (
+            {['home', 'about me', 'testimonials', 'portfolio', 'resume'].map((section) => (
               <li key={section}>
                 <button
                   onClick={() => setActiveSection(section)}
@@ -594,6 +655,7 @@ const App = () => {
         <div key={activeSection} className="fade-in">
           {activeSection === 'home' && renderHome()}
           {activeSection === 'about me' && renderAbout()}
+          {activeSection === 'testimonials' && renderTestimonials()}
           {activeSection === 'portfolio' && renderPortfolio()}
           {activeSection === 'resume' && renderResume()}
           {activeSection === 'contact' && renderContact()}

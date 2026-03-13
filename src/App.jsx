@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Github, Mail, Linkedin, FileText, ExternalLink } from 'lucide-react';
-import profilePic from './images/luffy-image.jpeg';
+import profilePic from './images/AaronLinkedinPFP.jpeg';
 import backgroundImage from './images/RocketIMG.png';
 
 const App = () => {

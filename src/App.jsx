@@ -2,7 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import { Github, Mail, Linkedin, FileText, ExternalLink } from 'lucide-react';
 import profilePic from './images/AaronLinkedinPFP.jpeg';
+import allenImage from './images/allenimage.jpeg';
+import freddyImage from './images/freddyimage.jpeg';
 import backgroundImage from './images/RocketIMG.png';
+import ivyImage from './images/ivyimage.png';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -118,6 +121,7 @@ const App = () => {
       name: "Freddy Rojas",
       title: "System Engineer | Software Developer | n8n Automation",
       context: "Worked with Aaron on the same team at ZYSC LLC",
+      image: freddyImage,
     },
     {
       quote:
@@ -125,6 +129,7 @@ const App = () => {
       name: "Ivy R. Gentry",
       title: "Administrative & Intake Specialist | Graduate Student",
       context: "Studied with Aaron and has known him across academic and professional settings",
+      image: ivyImage,
     },
     {
       quote:
@@ -132,6 +137,7 @@ const App = () => {
       name: "Allen Chen",
       title: "Custodial Cast Member @ Walt Disney World",
       context: "Studied data science with Aaron at the University of South Florida",
+      image: allenImage,
     },
   ];
 
@@ -395,10 +401,17 @@ const App = () => {
           {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="rounded-xl border border-gray-700 bg-gray-900/50 p-6">
               <p className="text-lg leading-8 text-gray-200">"{testimonial.quote}"</p>
-              <div className="mt-5 space-y-1">
-                <p className="font-semibold text-gray-100">{testimonial.name}</p>
-                <p className="text-sm text-gray-400">{testimonial.title}</p>
-                <p className="text-sm text-gray-500">{testimonial.context}</p>
+              <div className="mt-5 flex items-center gap-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="h-14 w-14 rounded-full object-cover ring-2 ring-gray-700"
+                />
+                <div className="space-y-1">
+                  <p className="font-semibold text-gray-100">{testimonial.name}</p>
+                  <p className="text-sm text-gray-400">{testimonial.title}</p>
+                  <p className="text-sm text-gray-500">{testimonial.context}</p>
+                </div>
               </div>
             </div>
           ))}

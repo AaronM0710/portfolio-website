@@ -1,6 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
-import { Github, Mail, Linkedin, FileText, ExternalLink } from 'lucide-react';
+import { Github, Mail, Linkedin, FileText, ExternalLink, Cloud } from 'lucide-react';
+import {
+  SiDocker,
+  SiGithubactions,
+  SiJavascript,
+  SiNodedotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiTypescript,
+} from 'react-icons/si';
 import profilePic from './images/AaronLinkedinPFP.jpeg';
 import allenImage from './images/allenimage.jpeg';
 import freddyImage from './images/freddyimage.jpeg';
@@ -143,6 +154,19 @@ const App = () => {
       context: "Studied data science with Aaron at the University of South Florida",
       image: allenImage,
     },
+  ];
+
+  const stackItems = [
+    { name: "React", icon: SiReact, color: "#61DAFB" },
+    { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+    { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
+    { name: "Python", icon: SiPython, color: "#3776AB" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+    { name: "AWS", icon: Cloud, color: "#FF9900" },
+    { name: "Docker", icon: SiDocker, color: "#2496ED" },
+    { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
+    { name: "OpenAI", icon: SiOpenai, color: "#10A37F" },
   ];
 
   const projects = [
@@ -374,6 +398,34 @@ const App = () => {
             <p className="leading-8">
               As I approach graduation from the University of South Florida in May 2026, I am looking for software engineering opportunities where I can contribute early, keep learning from strong teams, and continue growing into a high-impact engineer. I am based in Tampa, open to relocation, and particularly interested in roles involving full-stack development, software architecture, system design, CI/CD pipelines, cloud infrastructure, APIs, Docker, DevOps, and AI-enabled products.
             </p>
+          </div>
+        </section>
+
+        <section className="space-y-5 border-t border-gray-700 pt-8">
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-100">My Stack</h3>
+            <p className="mt-2 max-w-3xl text-gray-400">
+              The technologies I use most across product development, architecture, deployment, and AI-driven features.
+            </p>
+          </div>
+
+          <div className="stack-marquee overflow-hidden rounded-2xl border border-gray-700 bg-gray-900/60 py-5">
+            <div className="stack-track flex w-max items-center gap-4 px-4">
+              {[...stackItems, ...stackItems].map((item, index) => (
+                <div
+                  key={`${item.name}-${index}`}
+                  className="flex min-w-[190px] items-center gap-4 rounded-2xl border border-gray-700 bg-gray-800/90 px-4 py-3 shadow-lg"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-950/70 shadow-md ring-1 ring-gray-700">
+                    <item.icon size={28} style={{ color: item.color }} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.18em] text-gray-500">Tech</p>
+                    <p className="text-base font-semibold text-gray-100">{item.name}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>

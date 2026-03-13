@@ -135,19 +135,15 @@ const App = () => {
         <div>
           <h4 className="font-medium text-gray-200">University of South Florida</h4>
           <p className="text-gray-400">Major: Data Science & Analytics</p>
-          <p className="text-gray-400">Expected Graduation: May 2025</p>
-          <p className="text-gray-400">GPA: 3.8</p>
-          
+          <p className="text-gray-400">Expected Graduation: May 2026</p>
+          <p className="text-gray-400">GPA: 3.0</p>
+
           <div className="mt-4">
             <h5 className="text-gray-300 font-medium">Relevant Courses</h5>
             <ul className="grid grid-cols-2 gap-2 mt-2 text-gray-400">
-              <li>• Intro to Programming w/ Python</li>
-              <li>• Java 1 & 2</li>
-              <li>• Statistics</li>
-              <li>• Calculus 1, 2 & 3</li>
-              <li>• Web Development</li>
+              <li>• Python Programming</li>
+              <li>• Java I & II</li>
               <li>• Database Concepts</li>
-              <li>• Adv Stats & Analytics</li>
             </ul>
           </div>
         </div>
@@ -166,24 +162,55 @@ const App = () => {
       <section className="space-y-4">
         <h3 className="text-xl font-semibold text-gray-100 border-b border-gray-700 pb-2">Work Experience</h3>
         
+        {/* Software Engineer - ZYSC LLC */}
+        <div className="space-y-2">
+          <div className="flex justify-between">
+            <h4 className="font-medium text-gray-200">Software Engineer</h4>
+            <p className="text-gray-400">Apr 2025 - Present</p>
+          </div>
+          <p className="text-gray-300">ZYSC LLC</p>
+          <ul className="list-disc ml-6 text-gray-400">
+            <li>Contributed to the development of a new web application from scratch, including front-end, back-end, and deployment processes</li>
+            <li>Diagnosed and resolved critical performance bottleneck that plagued the application for months, implementing Gunicorn with multi-threaded workers to improve page load times by up to 75%</li>
+            <li>Maintained and improved a second codebase, ensuring optimal performance and functionality for the company website</li>
+            <li>Collaborated closely with a back-end team on API integrations and data flow, and with the marketing team to implement new features and user-facing updates</li>
+          </ul>
+        </div>
+
+        {/* Security Officer - Tampa General */}
+        <div className="space-y-2">
+          <div className="flex justify-between">
+            <h4 className="font-medium text-gray-200">Security Officer</h4>
+            <p className="text-gray-400">Oct 2024 - Apr 2025</p>
+          </div>
+          <p className="text-gray-300">Tampa General Hospital</p>
+          <ul className="list-disc ml-6 text-gray-400">
+            <li>Conducted weapon screenings and maintained a secure environment through regular patrols, both on foot inside the facility and in a vehicle around the premises</li>
+            <li>Responded to emergency situations, including Code Grey and other critical alerts, demonstrating the ability to remain calm and decisive under pressure</li>
+            <li>Maintained a high level of situational awareness to ensure the safety of staff, patients, and visitors</li>
+          </ul>
+        </div>
+
         {/* Web Developer Intern */}
         <div className="space-y-2">
           <div className="flex justify-between">
             <h4 className="font-medium text-gray-200">Web Developer Intern</h4>
-            <p className="text-gray-400">Jan 2024 - Present</p>
+            <p className="text-gray-400">Jan 2024 - May 2024</p>
           </div>
           <p className="text-gray-300">USF Global Tech Experience</p>
           <ul className="list-disc ml-6 text-gray-400">
-            <li>Assisted in web application development, implementing responsive design principles to enhance user experience</li>
-            <li>Coordinated security operations, maintaining zero incidents of theft or vandalism, demonstrating reliability and attention to detail</li>
+            <li>Developed responsive websites in a collaborative team environment using HTML, CSS, JavaScript, Bootstrap, and Tailwind CSS</li>
+            <li>Built user-friendly web interfaces that display correctly across multiple devices and screen sizes</li>
+            <li>Implemented responsive design principles to ensure optimal viewing experience across desktop and mobile platforms</li>
+            <li>Applied version control systems and collaborative development workflows to meet project deadlines</li>
           </ul>
         </div>
 
-        {/* Bouncer */}
+        {/* Bouncer / Armed Security */}
         <div className="space-y-2">
           <div className="flex justify-between">
-            <h4 className="font-medium text-gray-200">Bouncer</h4>
-            <p className="text-gray-400">Sep 2022 - Present</p>
+            <h4 className="font-medium text-gray-200">Bouncer / Armed Security Officer</h4>
+            <p className="text-gray-400">Sep 2022 - Jul 2024</p>
           </div>
           <p className="text-gray-300">Gulf Coast Security Services</p>
           <ul className="list-disc ml-6 text-gray-400">
@@ -202,7 +229,7 @@ const App = () => {
           </div>
           <p className="text-gray-300">City of Clearwater</p>
           <ul className="list-disc ml-6 text-gray-400">
-            <li>Taught hundreds of kids how to swim and performer lifesaving water rescues</li>
+            <li>Taught hundreds of kids how to swim and performed lifesaving water rescues</li>
             <li>Trained and supervised new lifeguards, ensuring they followed all safety protocols and procedures</li>
             <li>Conducted routine pool maintenance tasks, including chemical testing and cleaning</li>
             <li>Reduced the number of pool related incidents by 25%</li>
@@ -214,7 +241,7 @@ const App = () => {
       <section className="space-y-4">
         <h3 className="text-xl font-semibold text-gray-100 border-b border-gray-700 pb-2">Skills</h3>
         <div className="flex flex-wrap gap-2">
-          {["Python", "R", "SQL", "Data Visualization (Tableau, Excel)", "Java", "HTML", "CSS", "JavaScript", "Git & Github", "React", "Redux", "Bootstrap"].map((skill, index) => (
+          {["Python", "R", "SQL", "Java", "HTML", "CSS", "JavaScript", "TypeScript", "React", "Redux", "Bootstrap", "Tailwind CSS", "Git", "GitHub", "Tableau", "Excel", "Data Visualization", "Database Management", "RESTful APIs", "Responsive Web Design", "Full-Stack Development", "API Integration", "Statistical Analysis"].map((skill, index) => (
             <span key={index} className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">
               {skill}
             </span>

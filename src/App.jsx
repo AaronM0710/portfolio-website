@@ -69,6 +69,48 @@ const App = () => {
     workStyle: "Open to relocation",
   };
 
+  const homeHighlights = [
+    {
+      label: "Coding Since",
+      value: "2019",
+      detail: "Years of steady hands-on learning and building across web development and software engineering.",
+    },
+    {
+      label: "Performance Improvement",
+      value: "75%",
+      detail: "Cut page load times by resolving a major bottleneck at ZYSC LLC.",
+    },
+    {
+      label: "Graduation",
+      value: "May 2026",
+      detail: "B.S. in Data Science & Analytics from the University of South Florida.",
+    },
+    {
+      label: "Core Stack",
+      value: "React + AWS",
+      detail: "Hands-on experience with APIs, PostgreSQL, OpenAI, and full-stack delivery.",
+    },
+  ];
+
+  const aboutStrengths = [
+    {
+      title: "Full-Stack Execution",
+      detail: "Comfortable contributing across frontend, backend, APIs, databases, and deployment workflows.",
+    },
+    {
+      title: "Performance Mindset",
+      detail: "Focused on debugging, optimization, and shipping improvements that create measurable user and business impact.",
+    },
+    {
+      title: "Product Thinking",
+      detail: "I like building software that is technically solid, useful to end users, and aligned with business goals.",
+    },
+    {
+      title: "Growth-Oriented",
+      detail: "Graduating in May 2026 and looking for environments where I can contribute quickly and keep leveling up.",
+    },
+  ];
+
   const projects = [
     {
       title: "ZYSC LLC — Web Application",
@@ -248,6 +290,58 @@ const App = () => {
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  );
+
+  const renderAbout = () => (
+    <div className="py-8">
+      <div className="space-y-8 rounded-2xl border border-gray-700 bg-gray-800 p-6 shadow-xl sm:p-8">
+        <section className="space-y-4">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-100">About Me</h2>
+            <p className="mt-2 max-w-3xl text-gray-400">
+              I’m a software engineer who enjoys building practical, well-crafted products and getting closer to the kind of work that creates real value for users and teams.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {homeHighlights.map((highlight) => (
+              <div key={highlight.label} className="rounded-xl border border-gray-700 bg-gray-900/70 p-5">
+                <p className="text-sm uppercase tracking-wide text-gray-400">{highlight.label}</p>
+                <p className="mt-2 text-2xl font-bold text-gray-100">{highlight.value}</p>
+                <p className="mt-2 text-sm leading-6 text-gray-300">{highlight.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-4 border-t border-gray-700 pt-8">
+          <h3 className="text-2xl font-semibold text-gray-100">What I Bring</h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            {aboutStrengths.map((strength) => (
+              <div key={strength.title} className="rounded-xl border border-gray-700 bg-gray-900/50 p-5">
+                <h4 className="text-lg font-semibold text-gray-100">{strength.title}</h4>
+                <p className="mt-2 text-sm leading-6 text-gray-300">{strength.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-4 border-t border-gray-700 pt-8">
+          <h3 className="text-2xl font-semibold text-gray-100">Professional Biography</h3>
+          <div className="space-y-4 text-gray-300">
+            <p className="leading-8">
+              Since I started learning to code in 2019, I have been drawn to the process of turning ideas into working software. That interest grew into professional experience at ZYSC LLC, where I now contribute to production web applications in an Agile/Scrum environment. My work has included application development, API integrations, debugging, QA, performance tuning, and DevOps-oriented workflows that support deployment and reliability.
+            </p>
+            <p className="leading-8">
+              I am especially motivated by problems that require both technical depth and practical judgment. In real terms, that has meant identifying bottlenecks, improving reliability, supporting deployment workflows, and shipping features that help the business move forward. One example was resolving a major performance issue that helped reduce page load times by up to 75 percent. Another was building my AI budgeting app end-to-end using React, TypeScript, PostgreSQL, AWS, and OpenAI-powered workflows.
+            </p>
+            <p className="leading-8">
+              As I approach graduation from the University of South Florida in May 2026, I am looking for software engineering opportunities where I can contribute early, keep learning from strong teams, and continue growing into a high-impact engineer. I am based in Tampa, open to relocation, and particularly interested in roles involving full-stack development, cloud infrastructure, APIs, Docker, DevOps, and AI-enabled products.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );
@@ -478,7 +572,7 @@ const App = () => {
       <nav className="bg-gray-800 border-b border-gray-700 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <ul className="flex space-x-8">
-            {['home', 'portfolio', 'resume'].map((section) => (
+            {['home', 'about me', 'portfolio', 'resume'].map((section) => (
               <li key={section}>
                 <button
                   onClick={() => setActiveSection(section)}
@@ -499,6 +593,7 @@ const App = () => {
       <main className="max-w-4xl mx-auto px-4">
         <div key={activeSection} className="fade-in">
           {activeSection === 'home' && renderHome()}
+          {activeSection === 'about me' && renderAbout()}
           {activeSection === 'portfolio' && renderPortfolio()}
           {activeSection === 'resume' && renderResume()}
           {activeSection === 'contact' && renderContact()}

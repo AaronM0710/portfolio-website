@@ -10,3 +10,17 @@
 .fade-in {
   animation: fadeIn 0.3s ease-out forwards;
 }
+
+@keyframes stackScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.stack-track {
+  animation: stackScroll 30s linear infinite;
+  will-change: transform;
+}
+
+.stack-marquee:hover .stack-track {
+  animation-play-state: paused;
+}

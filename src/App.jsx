@@ -51,7 +51,9 @@ const App = () => {
       technologies: ["React", "Python", "Gunicorn", "REST APIs", "Full-Stack", "Deployment"],
       github: null,
       demo: null,
-      note: "Proprietary — Professional Work",
+      note: "NDA — Private Repository",
+      companyUrl: "https://www.zyscsoftware.com/",
+      companyLabel: "View Company Site",
     },
     {
       title: "AI Budgeting App",
@@ -168,6 +170,12 @@ const App = () => {
                 <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
                   <ExternalLink size={16} />
                   <span>Demo</span>
+                </a>
+              )}
+              {project.companyUrl && (
+                <a href={project.companyUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+                  <ExternalLink size={16} />
+                  <span>{project.companyLabel || 'Company Site'}</span>
                 </a>
               )}
             </div>

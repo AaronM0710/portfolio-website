@@ -707,7 +707,7 @@ const App = () => {
               <li key={section}>
                 <button
                   onClick={() => setActiveSection(section)}
-                  className={`capitalize ${
+                  className={`${
                     activeSection === section
                       ? 'text-blue-400 font-medium'
                       : 'text-gray-400 hover:text-gray-200'

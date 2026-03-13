@@ -8,6 +8,8 @@ const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState('idle'); // idle | sending | success | error
+  const resumeFilename = 'AaronMcCullough2026Resume.pdf';
+  const resumeUrl = `${import.meta.env.BASE_URL}${resumeFilename}`;
 
   const handleFormChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -31,6 +33,27 @@ const App = () => {
       }
     } catch {
       setFormStatus('error');
+    }
+  };
+
+  const handleResumeDownload = async () => {
+    try {
+      const response = await fetch(resumeUrl);
+      if (!response.ok) {
+        throw new Error('Resume request failed');
+      }
+
+      const blob = await response.blob();
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = objectUrl;
+      link.download = resumeFilename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(objectUrl);
+    } catch {
+      window.open(resumeUrl, '_blank', 'noopener,noreferrer');
     }
   };
   
@@ -198,16 +221,14 @@ const App = () => {
       {/* Header with Download Button */}
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-100">Resume</h2>
-        <a 
-          href="/aaron-mccullough-resume.pdf" 
-          download
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={handleResumeDownload}
           className="flex items-center space-x-2 bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600 text-gray-200"
         >
           <FileText size={20} />
           <span>Download PDF</span>
-        </a>
+        </button>
       </div>
 
       {/* Education Section */}

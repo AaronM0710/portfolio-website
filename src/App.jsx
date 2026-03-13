@@ -107,7 +107,6 @@ const App = () => {
 
   const renderHome = () => (
     <div className="relative min-h-screen">
-      {/* Background image with parallax - more responsive */}
       <div 
         className="fixed top-0 left-0 w-full h-full z-0"
         style={{
@@ -120,50 +119,81 @@ const App = () => {
           height: '100vh'
         }}
       >
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
       
-      {/* Centered content - more responsive */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center p-4 sm:p-6 md:p-8">
-        <div className="bg-gray-900 bg-opacity-80 p-4 sm:p-6 md:p-8 rounded-lg shadow-xl w-full max-w-2xl">
-          {/* Profile section - responsive layout */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-6">
-            {/* Profile image - responsive sizing */}
-            <img 
-              src={profilePic} 
-              alt="Profile" 
-              className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border-4 border-gray-700 object-cover"
-            />
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-100">{personalInfo.name}</h1>
-              <h2 className="text-xl sm:text-2xl text-gray-400">{personalInfo.title}</h2>
-              {personalInfo.availableForWork && (
-                <span className="inline-flex items-center gap-1.5 mt-2 text-sm text-green-400">
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                  Available for work
-                </span>
-              )}
+      <div className="relative z-10 px-4 py-8 sm:px-6 md:px-8">
+        <div className="mx-auto flex min-h-screen w-full max-w-5xl items-center">
+          <div className="w-full space-y-8 rounded-2xl border border-gray-700 bg-gray-900/85 p-6 shadow-xl backdrop-blur-sm sm:p-8 md:p-10">
+            <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:items-start">
+              <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+                <img 
+                  src={profilePic} 
+                  alt="Profile" 
+                  className="h-28 w-28 rounded-full border-4 border-gray-700 object-cover sm:h-32 sm:w-32 md:h-36 md:w-36"
+                />
+              </div>
+
+              <div className="space-y-5 text-center lg:text-left">
+                <div className="space-y-3">
+                  <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-300">
+                    Software Engineer based in Tampa
+                  </p>
+                  <h1 className="text-4xl font-bold leading-tight text-gray-100 sm:text-5xl">
+                    {personalInfo.name}
+                  </h1>
+                  <h2 className="text-xl text-gray-300 sm:text-2xl">{personalInfo.title}</h2>
+                  <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-300 lg:justify-start">
+                    <span className="rounded-full border border-gray-600 px-3 py-1">
+                      {personalInfo.location}
+                    </span>
+                    <span className="rounded-full border border-gray-600 px-3 py-1">
+                      {personalInfo.workStyle}
+                    </span>
+                    <span className="rounded-full border border-gray-600 px-3 py-1">
+                      New Grad May 2026
+                    </span>
+                    {personalInfo.availableForWork && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-green-500/40 px-3 py-1 text-green-400">
+                        <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+                        Available for work
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <p className="max-w-3xl text-base leading-8 text-gray-300 sm:text-lg">
+                  {personalInfo.bio}
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+                  {["React", "TypeScript", "JavaScript", "Node.js", "PostgreSQL", "AWS", "REST APIs", "OpenAI"].map((skill) => (
+                    <span key={skill} className="rounded-full bg-gray-800 px-3 py-1 text-sm text-gray-200 ring-1 ring-gray-700">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+                  <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+                    <Github size={20} />
+                    <span>Personal GitHub</span>
+                  </a>
+                  <a href="https://github.com/aaronzysc" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+                    <Github size={20} />
+                    <span>Work GitHub</span>
+                  </a>
+                  <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+                    <Linkedin size={20} />
+                    <span>LinkedIn</span>
+                  </a>
+                  <a href={`mailto:${personalInfo.email}`} className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+                    <Mail size={20} />
+                    <span>Email</span>
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-          <p className="text-base sm:text-lg text-gray-300 mb-6">{personalInfo.bio}</p>
-          <div className="flex justify-center space-x-4">
-            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
-              <Github size={20} />
-              <span>Personal GitHub</span>
-            </a>
-            <a href="https://github.com/aaronzysc" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
-              <Github size={20} />
-              <span>Work GitHub</span>
-            </a>
-            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
-              <Linkedin size={20} />
-              <span>LinkedIn</span>
-            </a>
-            <a href={`mailto:${personalInfo.email}`} className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
-              <Mail size={20} />
-              <span>Email</span>
-            </a>
           </div>
         </div>
       </div>

@@ -9,8 +9,8 @@ const App = () => {
   
   const personalInfo = {
     name: "Aaron J. McCullough",
-    title: "Software Developer",
-    bio: "University student in Tampa, FL with experience as a web developer, data analyst, and freelancer. Experienced in building modern web applications and analyzing data using Python, R, SQL & MySQL, JavaScript, HTML, CSS, React, Tailwind, and Bootstrap. Creating elegant solutions through code.",
+    title: "Software Engineer",
+    bio: "Software Engineer with hands-on experience in full-stack web development and a strong foundation in data science principles. Proficient in HTML, CSS, JavaScript, and modern frameworks like React. Passionate about creating responsive, user-friendly interfaces and writing clean, efficient, and well-documented code.",
     email: "mccullougha00@yahoo.com",
     github: "https://github.com/AaronM0710",
     linkedin: "https://www.linkedin.com/in/aaronjmccullough"

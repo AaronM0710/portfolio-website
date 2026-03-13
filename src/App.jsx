@@ -90,8 +90,8 @@ const App = () => {
     },
     {
       label: "Core Stack",
-      value: "React + AWS",
-      detail: "Hands-on experience with APIs, PostgreSQL, OpenAI, and full-stack delivery.",
+      value: "Architecture + AWS",
+      detail: "Hands-on experience with software architecture, system design, CI/CD, infrastructure, APIs, PostgreSQL, AWS, Docker, and full-stack delivery.",
     },
   ];
 
@@ -99,6 +99,10 @@ const App = () => {
     {
       title: "Full-Stack Execution",
       detail: "Comfortable contributing across frontend, backend, APIs, databases, and deployment workflows.",
+    },
+    {
+      title: "Architecture & Infra",
+      detail: "Interested in how systems are structured end-to-end, from software architecture and system design to infrastructure, environments, and reliability.",
     },
     {
       title: "Performance Mindset",
@@ -144,8 +148,8 @@ const App = () => {
   const projects = [
     {
       title: "ZYSC LLC — Web Application",
-      description: "Full-stack web application built from the ground up. Diagnosed and resolved a critical performance bottleneck by implementing Gunicorn with multi-threaded workers, cutting page load times by up to 75%. Collaborated with back-end and marketing teams on API integrations and user-facing features.",
-      technologies: ["React", "Python", "Gunicorn", "REST APIs", "Full-Stack", "Deployment"],
+      description: "Full-stack web application built from the ground up. Diagnosed and resolved a critical performance bottleneck by implementing Gunicorn with multi-threaded workers, cutting page load times by up to 75%. Contributed across application architecture, system design decisions, API integrations, CI/CD and DevOps workflows, infrastructure-minded deployment work, and user-facing features.",
+      technologies: ["React", "Python", "Gunicorn", "Docker", "CI/CD", "Infrastructure", "System Design", "DevOps", "REST APIs", "Full-Stack", "Deployment"],
       github: null,
       demo: null,
       note: "NDA — Private Repository",
@@ -239,7 +243,7 @@ const App = () => {
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-                  {["React", "TypeScript", "JavaScript", "Node.js", "PostgreSQL", "AWS", "REST APIs", "OpenAI"].map((skill) => (
+                  {["React", "TypeScript", "Node.js", "AWS", "Docker", "CI/CD", "Infrastructure", "System Design", "OpenAI"].map((skill) => (
                     <span key={skill} className="rounded-full bg-gray-800 px-3 py-1 text-sm text-gray-200 ring-1 ring-gray-700">
                       {skill}
                     </span>
@@ -362,13 +366,13 @@ const App = () => {
           <h3 className="text-2xl font-semibold text-gray-100">Professional Biography</h3>
           <div className="space-y-4 text-gray-300">
             <p className="leading-8">
-              Since I started learning to code in 2019, I have been drawn to the process of turning ideas into working software. That interest grew into professional experience at ZYSC LLC, where I now contribute to production web applications in an Agile/Scrum environment. My work has included application development, API integrations, debugging, QA, performance tuning, and DevOps-oriented workflows that support deployment and reliability.
+              Since I started learning to code in 2019, I have been drawn to the process of turning ideas into working software. That interest grew into professional experience at ZYSC LLC, where I now contribute to production web applications in an Agile/Scrum environment. My work has included application development, API integrations, debugging, QA, performance tuning, and DevOps-oriented workflows that support deployment, CI/CD, infrastructure, system design thinking, and reliability.
             </p>
             <p className="leading-8">
-              I am especially motivated by problems that require both technical depth and practical judgment. In real terms, that has meant identifying bottlenecks, improving reliability, supporting deployment workflows, and shipping features that help the business move forward. One example was resolving a major performance issue that helped reduce page load times by up to 75 percent. Another was building my AI budgeting app end-to-end using React, TypeScript, PostgreSQL, AWS, and OpenAI-powered workflows.
+              I am especially motivated by problems that require both technical depth and practical judgment. In real terms, that has meant identifying bottlenecks, improving reliability, supporting deployment workflows, thinking through software architecture and system design decisions, and shipping features that help the business move forward. One example was resolving a major performance issue that helped reduce page load times by up to 75 percent. Another was building my AI budgeting app end-to-end using React, TypeScript, PostgreSQL, AWS, and OpenAI-powered workflows.
             </p>
             <p className="leading-8">
-              As I approach graduation from the University of South Florida in May 2026, I am looking for software engineering opportunities where I can contribute early, keep learning from strong teams, and continue growing into a high-impact engineer. I am based in Tampa, open to relocation, and particularly interested in roles involving full-stack development, cloud infrastructure, APIs, Docker, DevOps, and AI-enabled products.
+              As I approach graduation from the University of South Florida in May 2026, I am looking for software engineering opportunities where I can contribute early, keep learning from strong teams, and continue growing into a high-impact engineer. I am based in Tampa, open to relocation, and particularly interested in roles involving full-stack development, software architecture, system design, CI/CD pipelines, cloud infrastructure, APIs, Docker, DevOps, and AI-enabled products.
             </p>
           </div>
         </section>
@@ -494,6 +498,7 @@ const App = () => {
           <ul className="list-disc ml-6 text-gray-400">
             <li>Contributed to the development of a new web application from scratch, including front-end, back-end, and deployment processes</li>
             <li>Diagnosed and resolved critical performance bottleneck that plagued the application for months, implementing Gunicorn with multi-threaded workers to improve page load times by up to 75%</li>
+            <li>Built hands-on experience with Docker, CI/CD practices, system design thinking, and infrastructure-minded DevOps workflows while supporting deployment, environment setup, and overall application reliability</li>
             <li>Maintained and improved a second codebase, ensuring optimal performance and functionality for the company website</li>
             <li>Collaborated closely with a back-end team on API integrations and data flow, and with the marketing team to implement new features and user-facing updates</li>
           </ul>
@@ -563,7 +568,7 @@ const App = () => {
       <section className="space-y-4">
         <h3 className="text-xl font-semibold text-gray-100 border-b border-gray-700 pb-2">Skills</h3>
         <div className="flex flex-wrap gap-2">
-          {["Python", "R", "SQL", "Java", "HTML", "CSS", "JavaScript", "TypeScript", "React", "Redux", "Bootstrap", "Tailwind CSS", "Git", "GitHub", "Tableau", "Excel", "Data Visualization", "Database Management", "RESTful APIs", "Responsive Web Design", "Full-Stack Development", "API Integration", "Statistical Analysis"].map((skill, index) => (
+          {["Python", "R", "SQL", "Java", "HTML", "CSS", "JavaScript", "TypeScript", "React", "Redux", "Bootstrap", "Tailwind CSS", "Git", "GitHub", "Docker", "CI/CD", "DevOps", "AWS", "Infrastructure", "Software Architecture", "System Design", "Tableau", "Excel", "Data Visualization", "Database Management", "RESTful APIs", "Responsive Web Design", "Full-Stack Development", "API Integration", "Statistical Analysis"].map((skill, index) => (
             <span key={index} className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">
               {skill}
             </span>

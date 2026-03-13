@@ -18,19 +18,34 @@ const App = () => {
 
   const projects = [
     {
+      title: "ZYSC LLC — Web Application",
+      description: "Full-stack web application built from the ground up. Diagnosed and resolved a critical performance bottleneck by implementing Gunicorn with multi-threaded workers, cutting page load times by up to 75%. Collaborated with back-end and marketing teams on API integrations and user-facing features.",
+      technologies: ["React", "Python", "Gunicorn", "REST APIs", "Full-Stack", "Deployment"],
+      github: null,
+      demo: null,
+      note: "Proprietary — Professional Work",
+    },
+    {
+      title: "AI Budgeting App",
+      description: "AI-powered personal finance tool with OCR receipt scanning via AWS Textract, GPT-4 driven spending insights, and PostgreSQL-backed transaction tracking. Features user authentication and document upload.",
+      technologies: ["TypeScript", "React", "Node.js", "PostgreSQL", "AWS Textract", "OpenAI GPT-4"],
+      github: "https://github.com/AaronM0710/ai-budgeting-app",
+      demo: null,
+    },
+    {
       title: "Security Landing Page",
-      description: "A professional landing page developed for a security company, featuring modern design and responsive layout",
+      description: "A professional landing page developed for a security company, featuring modern design and responsive layout.",
       technologies: ["React", "Tailwind CSS", "Responsive Design", "UI/UX"],
       github: "https://github.com/AaronM0710/security-landing",
-      demo: "https://demo1.example.com"
+      demo: "https://aaronm0710.github.io/security-landing/",
     },
     {
       title: "Interactive Drum Machine",
-      description: "A web-based drum machine application that allows users to create and play beats in real-time",
+      description: "A web-based drum machine application that allows users to create and play beats in real-time.",
       technologies: ["React", "Web Audio API", "CSS", "JavaScript"],
-      github: "https://github.com/project2",
-      demo: "https://demo2.example.com"
-    }
+      github: "https://github.com/AaronM0710/FCC-drum-machine",
+      demo: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    },
   ];
 
   const renderHome = () => (
@@ -85,30 +100,42 @@ const App = () => {
   );
 
   const renderPortfolio = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {projects.map((project, index) => (
-        <div key={index} className="border border-gray-700 rounded-lg p-6 bg-gray-800 shadow-sm hover:shadow-md transition-shadow">
-          <h3 className="text-xl font-semibold mb-2 text-gray-100">{project.title}</h3>
-          <p className="text-gray-400 mb-4">{project.description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies.map((tech, i) => (
-              <span key={i} className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">
-                {tech}
+    <div className="py-8">
+      <h2 className="text-2xl font-bold text-gray-100 mb-6">Projects</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.map((project, index) => (
+          <div key={index} className="border border-gray-700 rounded-lg p-6 bg-gray-800 shadow-sm hover:shadow-lg hover:border-gray-500 transition-all duration-200">
+            <h3 className="text-xl font-semibold mb-2 text-gray-100">{project.title}</h3>
+            {project.note && (
+              <span className="inline-block text-xs text-yellow-400 border border-yellow-600 rounded px-2 py-0.5 mb-2">
+                {project.note}
               </span>
-            ))}
+            )}
+            <p className="text-gray-400 mb-4">{project.description}</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.technologies.map((tech, i) => (
+                <span key={i} className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="flex space-x-4">
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+                  <Github size={16} />
+                  <span>Code</span>
+                </a>
+              )}
+              {project.demo && (
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+                  <ExternalLink size={16} />
+                  <span>Demo</span>
+                </a>
+              )}
+            </div>
           </div>
-          <div className="flex space-x-4">
-            <a href={project.github} className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
-              <Github size={16} />
-              <span>Code</span>
-            </a>
-            <a href={project.demo} className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
-              <ExternalLink size={16} />
-              <span>Demo</span>
-            </a>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 

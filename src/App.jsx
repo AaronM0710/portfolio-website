@@ -59,12 +59,14 @@ const App = () => {
   
   const personalInfo = {
     name: "Aaron J. McCullough",
-    title: "Software Engineer",
+    title: "Software Engineer | Full-Stack Developer",
     bio: "Software Engineer with hands-on experience in full-stack web development and a strong foundation in data science principles. Proficient in HTML, CSS, JavaScript, and modern frameworks like React. Passionate about creating responsive, user-friendly interfaces and writing clean, efficient, and well-documented code.",
     email: "mccullougha00@yahoo.com",
     github: "https://github.com/AaronM0710",
     linkedin: "https://www.linkedin.com/in/aaronjmccullough",
     availableForWork: true,
+    location: "Tampa, FL",
+    workStyle: "Open to relocation",
   };
 
   const projects = [

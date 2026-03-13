@@ -424,10 +424,12 @@ const App = () => {
       </nav>
 
       <main className="max-w-4xl mx-auto px-4">
-        {activeSection === 'home' && renderHome()}
-        {activeSection === 'portfolio' && renderPortfolio()}
-        {activeSection === 'resume' && renderResume()}
-        {activeSection === 'contact' && renderContact()}
+        <div key={activeSection} className="fade-in">
+          {activeSection === 'home' && renderHome()}
+          {activeSection === 'portfolio' && renderPortfolio()}
+          {activeSection === 'resume' && renderResume()}
+          {activeSection === 'contact' && renderContact()}
+        </div>
       </main>
     </div>
   );

@@ -148,7 +148,11 @@ const App = () => {
           <div className="flex justify-center space-x-4">
             <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
               <Github size={20} />
-              <span>GitHub</span>
+              <span>Personal GitHub</span>
+            </a>
+            <a href="https://github.com/aaronzysc" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+              <Github size={20} />
+              <span>Work GitHub</span>
             </a>
             <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
               <Linkedin size={20} />

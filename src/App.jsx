@@ -293,7 +293,7 @@ const App = () => {
       <nav className="bg-gray-800 border-b border-gray-700 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <ul className="flex space-x-8">
-            {['home', 'portfolio', 'resume'].map((section) => (
+            {['home', 'portfolio', 'resume', 'contact'].map((section) => (
               <li key={section}>
                 <button
                   onClick={() => setActiveSection(section)}

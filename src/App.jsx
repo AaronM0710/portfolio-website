@@ -54,6 +54,8 @@ const App = () => {
       note: "NDA — Private Repository",
       companyUrl: "https://www.zyscsoftware.com/",
       companyLabel: "View Company Site",
+      workGithub: "https://github.com/aaronzysc",
+      workGithubLabel: "View Commits (Work GitHub)",
     },
     {
       title: "AI Budgeting App",
@@ -176,6 +178,12 @@ const App = () => {
                 <a href={project.companyUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
                   <ExternalLink size={16} />
                   <span>{project.companyLabel || 'Company Site'}</span>
+                </a>
+              )}
+              {project.workGithub && (
+                <a href={project.workGithub} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+                  <Github size={16} />
+                  <span>{project.workGithubLabel || 'Work GitHub'}</span>
                 </a>
               )}
             </div>

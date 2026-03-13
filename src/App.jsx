@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Github, Mail, Linkedin, FileText, ExternalLink, Cloud } from 'lucide-react';
 import {
+  SiClaude,
   SiDocker,
   SiGithubactions,
   SiJavascript,
@@ -166,6 +167,7 @@ const App = () => {
     { name: "AWS", icon: Cloud, color: "#FF9900" },
     { name: "Docker", icon: SiDocker, color: "#2496ED" },
     { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
+    { name: "Anthropic", icon: SiClaude, color: "#D97757" },
     { name: "OpenAI", icon: SiOpenai, color: "#10A37F" },
   ];
 

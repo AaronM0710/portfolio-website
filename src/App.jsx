@@ -245,7 +245,7 @@ const App = () => {
                   <h2 className="text-xl text-gray-300 sm:text-2xl">{personalInfo.title}</h2>
                   <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-300 lg:justify-start">
                     <span className="rounded-full border border-gray-600 px-3 py-1">
-                      {personalInfo.location}
+                      {`📍 ${personalInfo.location}`}
                     </span>
                     <span className="rounded-full border border-gray-600 px-3 py-1">
                       {personalInfo.workStyle}

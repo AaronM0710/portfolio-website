@@ -21,35 +21,8 @@ import ivyImage from './images/ivyimage.png';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-  const [formStatus, setFormStatus] = useState('idle'); // idle | sending | success | error
   const resumeFilename = 'AaronMcCullough2026Resume.pdf';
   const resumeUrl = `${import.meta.env.BASE_URL}${resumeFilename}`;
-
-  const handleFormChange = (e) => {
-    setFormState({ ...formState, [e.target.name]: e.target.value });
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setFormStatus('sending');
-    try {
-      // Sign up at formspree.io and replace YOUR_FORM_ID with your endpoint ID
-      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(formState),
-      });
-      if (res.ok) {
-        setFormStatus('success');
-        setFormState({ name: '', email: '', message: '' });
-      } else {
-        setFormStatus('error');
-      }
-    } catch {
-      setFormStatus('error');
-    }
-  };
 
   const handleResumeDownload = async () => {
     try {
@@ -632,74 +605,6 @@ const App = () => {
     </div>
   );
 
-  const renderContact = () => (
-    <div className="py-8 max-w-lg">
-      <h2 className="text-2xl font-bold mb-2 text-gray-100">Contact Me</h2>
-      <p className="text-gray-400 mb-6">Have an opportunity or just want to connect? Send me a message.</p>
-
-      {formStatus === 'success' ? (
-        <div className="bg-green-900 border border-green-700 text-green-300 rounded-lg p-6 text-center">
-          <p className="text-lg font-medium">Message sent!</p>
-          <p className="text-sm mt-1">I'll get back to you as soon as I can.</p>
-          <button
-            onClick={() => setFormStatus('idle')}
-            className="mt-4 text-sm text-green-400 hover:text-green-200 underline"
-          >
-            Send another
-          </button>
-        </div>
-      ) : (
-        <form onSubmit={handleFormSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium mb-1 text-gray-300">Name</label>
-            <input
-              type="text"
-              name="name"
-              required
-              value={formState.name}
-              onChange={handleFormChange}
-              className="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-800 text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="Your name"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1 text-gray-300">Email</label>
-            <input
-              type="email"
-              name="email"
-              required
-              value={formState.email}
-              onChange={handleFormChange}
-              className="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-800 text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="your@email.com"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1 text-gray-300">Message</label>
-            <textarea
-              name="message"
-              required
-              value={formState.message}
-              onChange={handleFormChange}
-              className="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-800 text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none h-32"
-              placeholder="Your message..."
-            />
-          </div>
-          {formStatus === 'error' && (
-            <p className="text-red-400 text-sm">Something went wrong. Try emailing me directly at {personalInfo.email}.</p>
-          )}
-          <button
-            type="submit"
-            disabled={formStatus === 'sending'}
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
-          >
-            {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
-          </button>
-        </form>
-      )}
-    </div>
-  );
-
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       <nav className="bg-gray-800 border-b border-gray-700 sticky top-0 z-50">
@@ -730,7 +635,6 @@ const App = () => {
           {activeSection === 'testimonials' && renderTestimonials()}
           {activeSection === 'portfolio' && renderPortfolio()}
           {activeSection === 'resume' && renderResume()}
-          {activeSection === 'contact' && renderContact()}
         </div>
       </main>
     </div>
